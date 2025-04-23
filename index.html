@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azra İçin Doğum Günü Mesajı</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Sayfa Temel Stilleri */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #revealButton {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.5s ease, visibility 0.5s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #revealButton:hover {
+            background-color: #feb47b;
+            transform: translateY(-2px);
+        }
+
+        #revealButton:active {
+            transform: translateY(1px);
+        }
+
+        .message-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 80%;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px) scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        visibility 0.8s;
+        }
+
+        .message-container.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .message-container p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .message-container pre {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #555;
+        }
+
+        .message-container p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message-container hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="revealButton">🎂 Azra İçin Bir Mesaj Var 🎂</button>
+
+    <div id="messageBox" class="message-container">
+        <pre>
+      🕯️  🕯️  🕯️
+    .'    '.'    '.
+   |======|======|
+ .'____________'.
+ |              |
+ | MUTLU YILLAR |
+ |    AZRA!     |
+ |______________|
+'.______________.'
+        </pre>
+
+        <p>Sevgili Azra Piri,</p>
+        <p>Bugün doğum günün olduğunu hatırladım ve bir mesaj bırakmak istedim.</p>
+        <p>Yeni yaşın sana mutluluk, sağlık ve güzel anılar getirsin. Her şey gönlünce olsun.</p>
+        <hr>
+        <p>Gün içinde seni arayacağım.</p>
+        <p>Sadece kutlamak ve biraz sohbet etmek adına.</p>
+        <p>Umarım her şey yolundadır.</p>
+    </div>
+
+    <script>
+        const revealButton = document.getElementById('revealButton');
+        const messageBox = document.getElementById('messageBox');
+
+        revealButton.addEventListener('click', () => {
+            messageBox.classList.add('visible');
+
+            confetti({
+                particleCount: 180,
+                spread: 100,
+                origin: { y: 0.6 },
+                zIndex: 1000
+            });
+
+            setTimeout(() => {
+                 revealButton.style.opacity = '0';
+                 revealButton.style.visibility = 'hidden';
+             }, 300);
+        });
+    </script>
+
+</body>
+</html>
