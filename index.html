@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azra'ya Doğum Günü Mesajı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #fff7f0, #ffd6e0);
+      font-family: 'Quicksand', sans-serif; font-style: italic; letter-spacing: 0.3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(255,255,255,0.6);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      color: #ff4e7a;
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+    .cake {
+      width: 80px;
+      margin: 20px auto;
+      position: relative;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+    .cake .base {
+      width: 80px;
+      height: 50px;
+      background: #ffb347;
+      border-radius: 10px;
+      position: relative;
+    }
+    .cake .candles {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      width: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cake .candles div {
+      width: 6px;
+      height: 20px;
+      background: #fff;
+      border-radius: 2px;
+      position: relative;
+    }
+    .cake .candles div::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 1px;
+      width: 4px;
+      height: 4px;
+      background: orange;
+      border-radius: 50%;
+      animation: flicker 1s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; transform: scale(1.2); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    audio {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .cake {
+        width: 60px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8d87e2ad7f.mp3?filename=happy-birthday-lofi-10491.mp3" type="audio/mp3">
+  </audio>
+  <div class="card">
+    <h1>Merhaba Azra,</h1>
+    <div class="cake">
+      <div class="candles">
+        <div></div><div></div><div></div>
+      </div>
+      <div class="base"></div>
+    </div>
+    <p>
+      Bugün doğum günün olduğunu hatırladım ve bir mesaj bırakmak istedim.<br>
+      Yeni yaşın sana mutluluk, sağlık ve güzel anılar getirsin. Her şey gönlünce olsun.<br><br>
+      Gün içinde seni arayacağım. Sadece kutlamak ve biraz sohbet etmek adına.<br>
+      Umarım her şey yolundadır.
+    </p>
+    
+  </div>
+  <script>
+    // Keep the cake bouncing animation
+    const cake = document.querySelector('.cake');
+    setInterval(() => cake.classList.add('bounce'), 1500);
+  </script>
+</body>
+</html>
