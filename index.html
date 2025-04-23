@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doğum Günün Kutlu Olsun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fff5f7, #ffd6e0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1 {
+      color: #ff4e7a;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .cake {
+      position: relative;
+      width: 100px;
+      margin: 20px auto;
+    }
+    .base {
+      width: 100px;
+      height: 60px;
+      background: #ffb347;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .candles {
+      position: absolute;
+      top: -25px;
+      left: 25px;
+      display: flex;
+      gap: 10px;
+    }
+    .candles div {
+      width: 8px;
+      height: 20px;
+      background-color: white;
+      border-radius: 2px;
+      position: relative;
+    }
+    .candles div::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: orange;
+      position: absolute;
+      top: -8px;
+      left: 1px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px orange;
+      animation: flicker 1s infinite alternate;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.6; transform: scale(1.1); }
+    }
+    audio {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      p { font-size: 15px; }
+      .cake { width: 80px; }
+      .base { width: 80px; height: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8d87e2ad7f.mp3?filename=happy-birthday-lofi-10491.mp3" type="audio/mp3">
+  </audio>
+  <div class="container">
+    <h1>Merhaba Azra,</h1>
+    <div class="cake">
+      <div class="candles"><div></div><div></div><div></div></div>
+      <div class="base"></div>
+    </div>
+    <p>
+      Bugün doğum günün olduğunu hatırladım ve bir mesaj bırakmak istedim.<br><br>
+      Yeni yaşın sana mutluluk, sağlık ve güzel anılar getirsin. Her şey gönlünce olsun.<br><br>
+      Gün içinde seni arayacağım. Sadece kutlamak ve biraz sohbet etmek adına.<br>
+      Umarım her şey yolundadır.
+    </p>
+  </div>
+</body>
+</html>
